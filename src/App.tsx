@@ -1,12 +1,7 @@
-import { Button } from "./components/ui/button";
+import Home from "./pages/Home";
 
 function App() {
-  return (
-    <>
-      <div className="flex justify-center font-bold">Hi</div>
-      <Button>Click me</Button>
-    </>
-  );
+  return <Home />;
 }
 
 export default App;
