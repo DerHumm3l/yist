@@ -1,0 +1,10 @@
+{
+  "appId": "yist.app",
+  "appName": "yist",
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  }
+}
