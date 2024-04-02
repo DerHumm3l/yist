@@ -16,15 +16,15 @@ export default createBrowserRouter([
     },
   },
   {
-    path: "list/:listId",
+    path: "list/:id",
     element: <ListPage />,
   },
   {
-    path: "list/:listId/addItems",
+    path: "list/:id/addItems",
     element: <AddListItemsPage />,
   },
   {
-    path: "list/:listId/editItems",
+    path: "list/:id/editItems",
     element: <EditListItemsPage />,
   },
 ]);
