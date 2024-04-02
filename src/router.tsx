@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, redirect } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import ListPage from "./pages/ListPage";
 import AddListItemsPage from "./pages/AddListItemsPage";
@@ -8,6 +8,12 @@ export default createBrowserRouter([
   {
     path: "/",
     element: <HomePage />,
+  },
+  {
+    path: "list/new",
+    action: () => {
+      return redirect(`list/${1}/addItems`);
+    },
   },
   {
     path: "list/:listId",
