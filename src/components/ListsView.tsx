@@ -1,7 +1,11 @@
-import lists from "@/data/lists.json";
 import ListCard from "./ListCard";
+import { List } from "@/types/list";
 
-export default function ListsView() {
+type ListsViewProps = {
+  lists: List[];
+};
+
+export default function ListsView({ lists }: ListsViewProps) {
   return (
     <section>
       <ul>

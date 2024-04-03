@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
-import lists from "@/data/lists.json";
+import { listSelector, useListsStore } from "@/lib/store";
 
 export default function ListPage() {
   const { id } = useParams();
-  const list = lists.find((x) => x.id === id);
+  const list = useListsStore(listSelector(id));
 
   if (!list) {
     return <div>ERROR</div>;
