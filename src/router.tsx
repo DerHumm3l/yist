@@ -3,6 +3,7 @@ import HomePage from "./pages/HomePage";
 import ListPage from "./pages/ListPage";
 import AddListItemsPage from "./pages/AddListItemsPage";
 import EditListItemsPage from "./pages/EditListItemsPage";
+import { id } from "./lib/id";
 
 export default createBrowserRouter([
   {
@@ -12,7 +13,7 @@ export default createBrowserRouter([
   {
     path: "list/new",
     loader: async () => {
-      return redirect(`/list/${1}/addItems`);
+      return redirect(`/list/${id()}/addItems`);
     },
   },
   {

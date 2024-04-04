@@ -3,7 +3,7 @@ import { listItemsSelector, listSelector, useListsStore } from "@/lib/store";
 
 export default function ListPage() {
   const { id } = useParams();
-  const list = useListsStore(listSelector(id));
+  const { list } = useListsStore(listSelector(id));
   const listItems = useListsStore(listItemsSelector(list?.id));
 
   if (!list) {

@@ -19,8 +19,12 @@ export const useListsStore = create<ListsStore>()((set) => ({
     set((state) => ({ listItems: [...state.listItems, ...listItems] })),
 }));
 
-export const listSelector = (id: string | undefined) => (state: ListsStore) =>
-  state.lists.find((x) => x.id === id);
+export const listSelector =
+  (id: string | undefined) => (state: ListsStore) => ({
+    list: state.lists.find((x) => x.id === id),
+    addList: state.addList,
+    addListItems: state.addListItems,
+  });
 
 export const listItemsSelector =
   (listId: string | undefined) => (state: ListsStore) =>
