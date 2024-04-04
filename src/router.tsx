@@ -11,8 +11,8 @@ export default createBrowserRouter([
   },
   {
     path: "list/new",
-    action: () => {
-      return redirect(`list/${1}/addItems`);
+    loader: async () => {
+      return redirect(`/list/${1}/addItems`);
     },
   },
   {
