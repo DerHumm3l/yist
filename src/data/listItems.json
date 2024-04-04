@@ -1,0 +1,102 @@
+[
+  {
+    "listId": "abc",
+    "checked": false,
+    "name": "apples"
+  },
+  {
+    "listId": "abc",
+    "checked": false,
+    "name": "bananas"
+  },
+  {
+    "listId": "abc",
+    "checked": false,
+    "name": "carrots"
+  },
+  {
+    "listId": "abc",
+    "checked": true,
+    "name": "oat milk"
+  },
+  {
+    "listId": "abc",
+    "checked": true,
+    "name": "yoghurt"
+  },
+  {
+    "listId": "abc",
+    "checked": true,
+    "name": "tofu"
+  },
+  {
+    "listId": "cde",
+    "checked": false,
+    "name": "apples"
+  },
+  {
+    "listId": "cde",
+    "checked": false,
+    "name": "bananas"
+  },
+  {
+    "listId": "cde",
+    "checked": false,
+    "name": "carrots"
+  },
+  {
+    "listId": "cde",
+    "checked": false,
+    "name": "oat milk"
+  },
+  {
+    "listId": "cde",
+    "checked": false,
+    "name": "yoghurt"
+  },
+  {
+    "listId": "cde",
+    "checked": false,
+    "name": "tofu"
+  },
+  {
+    "listId": "cde",
+    "checked": false,
+    "name": "spaghetti"
+  },
+  {
+    "listId": "cde",
+    "checked": false,
+    "name": "basmati rice"
+  },
+  {
+    "listId": "cde",
+    "checked": false,
+    "name": "ketchup"
+  },
+  {
+    "listId": "cde",
+    "checked": false,
+    "name": "vegetable broth"
+  },
+  {
+    "listId": "cde",
+    "checked": false,
+    "name": "bread"
+  },
+  {
+    "listId": "cde",
+    "checked": false,
+    "name": "apple juice"
+  },
+  {
+    "listId": "cde",
+    "checked": false,
+    "name": "beer"
+  },
+  {
+    "listId": "cde",
+    "checked": false,
+    "name": "chocolate bar"
+  }
+]

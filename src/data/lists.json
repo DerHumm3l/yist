@@ -2,93 +2,11 @@
   {
     "id": "abc",
     "name": "List 1 - Apr 1",
-    "items": [
-      {
-        "checked": false,
-        "name": "apples"
-      },
-      {
-        "checked": false,
-        "name": "bananas"
-      },
-      {
-        "checked": false,
-        "name": "carrots"
-      },
-      {
-        "checked": true,
-        "name": "oat milk"
-      },
-      {
-        "checked": true,
-        "name": "yoghurt"
-      },
-      {
-        "checked": true,
-        "name": "tofu"
-      }
-    ]
+    "completed": false
   },
   {
     "id": "cde",
     "name": "List 1 - Apr 5",
-    "items": [
-      {
-        "checked": false,
-        "name": "apples"
-      },
-      {
-        "checked": false,
-        "name": "bananas"
-      },
-      {
-        "checked": false,
-        "name": "carrots"
-      },
-      {
-        "checked": false,
-        "name": "oat milk"
-      },
-      {
-        "checked": false,
-        "name": "yoghurt"
-      },
-      {
-        "checked": false,
-        "name": "tofu"
-      },
-      {
-        "checked": false,
-        "name": "spaghetti"
-      },
-      {
-        "checked": false,
-        "name": "basmati rice"
-      },
-      {
-        "checked": false,
-        "name": "ketchup"
-      },
-      {
-        "checked": false,
-        "name": "vegetable broth"
-      },
-      {
-        "checked": false,
-        "name": "bread"
-      },
-      {
-        "checked": false,
-        "name": "apple juice"
-      },
-      {
-        "checked": false,
-        "name": "beer"
-      },
-      {
-        "checked": false,
-        "name": "chocolate bar"
-      }
-    ]
+    "completed": false
   }
 ]
