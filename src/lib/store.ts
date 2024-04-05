@@ -9,6 +9,7 @@ export type ListsStore = {
   listItems: ListItem[];
   addList: (list: List) => void;
   addListItems: (...listItems: ListItem[]) => void;
+  deleteList: (list: List) => void;
 };
 
 export const useListsStore = create<ListsStore>()((set) => ({
@@ -17,6 +18,8 @@ export const useListsStore = create<ListsStore>()((set) => ({
   addList: (list) => set((state) => ({ lists: [list, ...state.lists] })),
   addListItems: (...listItems) =>
     set((state) => ({ listItems: [...state.listItems, ...listItems] })),
+  deleteList: (list) =>
+    set((state) => ({ lists: state.lists.filter((x) => x.id !== list.id) })),
 }));
 
 export const listSelector =
@@ -24,6 +27,7 @@ export const listSelector =
     list: state.lists.find((x) => x.id === id),
     addList: state.addList,
     addListItems: state.addListItems,
+    deleteList: state.deleteList,
   });
 
 export const listItemsSelector =
