@@ -21,6 +21,7 @@
     "@capacitor/android": "^5.7.4",
     "@capacitor/camera": "latest",
     "@capacitor/core": "latest",
+    "@capacitor/preferences": "^5.0.7",
     "@capacitor/splash-screen": "latest",
     "@radix-ui/react-slot": "^1.0.2",
     "@types/node": "^20.12.2",

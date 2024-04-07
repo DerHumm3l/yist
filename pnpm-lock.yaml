@@ -14,6 +14,9 @@ dependencies:
   '@capacitor/core':
     specifier: latest
     version: 5.7.4
+  '@capacitor/preferences':
+    specifier: ^5.0.7
+    version: 5.0.7(@capacitor/core@5.7.4)
   '@capacitor/splash-screen':
     specifier: latest
     version: 5.0.7(@capacitor/core@5.7.4)
@@ -390,6 +393,14 @@ packages:
     resolution: {integrity: sha512-iZBgvx3o4amzKv5ttA+QHB6i7cxK+/mYpCQd1tnSdipg6ZkvfBhg1HkzhEqHk+I7MNur+QwgYDZho9+ycHRwOw==}
     dependencies:
       tslib: 2.6.2
+    dev: false
+
+  /@capacitor/preferences@5.0.7(@capacitor/core@5.7.4):
+    resolution: {integrity: sha512-JvfGP1m8nITWEFdBpKR9HXNeBjLKwO0q1pry7Z5lYrYmCrbyRBLWzaGZGll8py4KmGWL3F5+PZvhrpT4gPoeAQ==}
+    peerDependencies:
+      '@capacitor/core': ^5.0.0
+    dependencies:
+      '@capacitor/core': 5.7.4
     dev: false
 
   /@capacitor/splash-screen@5.0.7(@capacitor/core@5.7.4):
