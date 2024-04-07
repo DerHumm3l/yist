@@ -2,23 +2,27 @@ import lists from "@/data/lists.json";
 import listItems from "@/data/listItems.json";
 import { List } from "@/types/list";
 import { ListItem } from "@/types/listItem";
-import { create } from "zustand";
+import { create, StateCreator } from "zustand";
 
-export type ListsStore = {
+type ListsSlice = {
   lists: List[];
-  listItems: ListItem[];
   addList: (list: List) => void;
-  addListItems: (...listItems: ListItem[]) => void;
-  deleteList: (list: List) => void;
   updateList: (list: List) => void;
+  deleteList: (list: List) => void;
 };
 
-export const useListsStore = create<ListsStore>()((set) => ({
+type ListItemsSlice = {
+  listItems: ListItem[];
+  addListItems: (...listItems: ListItem[]) => void;
+};
+
+type ListsStore = ListsSlice & ListItemsSlice;
+
+const createListsSlice: StateCreator<ListsStore, [], [], ListsSlice> = (
+  set
+) => ({
   lists: lists ?? [],
-  listItems: listItems ?? [],
   addList: (list) => set((state) => ({ lists: [list, ...state.lists] })),
-  addListItems: (...listItems) =>
-    set((state) => ({ listItems: [...state.listItems, ...listItems] })),
   deleteList: (list) =>
     set((state) => ({ lists: state.lists.filter((x) => x.id !== list.id) })),
   updateList: (updatedList) =>
@@ -27,6 +31,19 @@ export const useListsStore = create<ListsStore>()((set) => ({
         list.id !== updatedList.id ? list : updatedList
       ),
     })),
+});
+
+const createListItemsSlice: StateCreator<ListsStore, [], [], ListItemsSlice> = (
+  set
+) => ({
+  addListItems: (...listItems) =>
+    set((state) => ({ listItems: [...state.listItems, ...listItems] })),
+  listItems: listItems ?? [],
+});
+
+export const useListsStore = create<ListsStore>()((...a) => ({
+  ...createListsSlice(...a),
+  ...createListItemsSlice(...a),
 }));
 
 export const listSelector =
