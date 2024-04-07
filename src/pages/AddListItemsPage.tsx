@@ -30,7 +30,7 @@ export default function AddListItemsPage() {
   };
 
   const submit = () => {
-    if (listInStore) {
+    if (!listInStore) {
       addList(list!);
     } else {
       updateList(list!);
