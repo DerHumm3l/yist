@@ -1,8 +1,18 @@
 import { List } from "@/types/list";
 import { Preferences } from "@capacitor/preferences";
+import { StateStorage } from "zustand/middleware";
 
 const LIST_STORAGE_KEY = "lists";
 const LIST_ITEMS_STORAGE_KEY = "listItems";
+
+export const storage: StateStorage = {
+  getItem: async (key) => {
+    const result = await Preferences.get({ key });
+    return result.value;
+  },
+  setItem: (key, value) => Preferences.set({ key, value }),
+  removeItem: (key) => Preferences.remove({ key }),
+};
 
 export async function clear() {
   return Preferences.clear();

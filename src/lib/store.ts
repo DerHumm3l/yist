@@ -1,8 +1,8 @@
-import lists from "@/data/lists.json";
-import listItems from "@/data/listItems.json";
 import { List } from "@/types/list";
 import { ListItem } from "@/types/listItem";
 import { create, StateCreator } from "zustand";
+import { createJSONStorage, persist } from "zustand/middleware";
+import { storage } from "./storage";
 
 type ListsSlice = {
   lists: List[];
@@ -21,7 +21,7 @@ type ListsStore = ListsSlice & ListItemsSlice;
 const createListsSlice: StateCreator<ListsStore, [], [], ListsSlice> = (
   set
 ) => ({
-  lists: lists ?? [],
+  lists: [],
   addList: (list) => set((state) => ({ lists: [list, ...state.lists] })),
   deleteList: (list) =>
     set((state) => ({ lists: state.lists.filter((x) => x.id !== list.id) })),
@@ -36,15 +36,23 @@ const createListsSlice: StateCreator<ListsStore, [], [], ListsSlice> = (
 const createListItemsSlice: StateCreator<ListsStore, [], [], ListItemsSlice> = (
   set
 ) => ({
+  listItems: [],
   addListItems: (...listItems) =>
     set((state) => ({ listItems: [...state.listItems, ...listItems] })),
-  listItems: listItems ?? [],
 });
 
-export const useListsStore = create<ListsStore>()((...a) => ({
-  ...createListsSlice(...a),
-  ...createListItemsSlice(...a),
-}));
+export const useListsStore = create<ListsStore>()(
+  persist(
+    (...a) => ({
+      ...createListsSlice(...a),
+      ...createListItemsSlice(...a),
+    }),
+    {
+      name: "lists-storage",
+      storage: createJSONStorage(() => storage),
+    }
+  )
+);
 
 export const listSelector =
   (id: string | undefined) => (state: ListsStore) => ({
