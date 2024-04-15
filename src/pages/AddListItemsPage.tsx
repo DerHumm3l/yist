@@ -5,6 +5,7 @@ import { ListItem } from "@/types/listItem";
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDefault } from "@uidotdev/usehooks";
+import AddListItemsInput from "@/components/AddListItemsInput";
 
 export default function AddListItemsPage() {
   const { id } = useParams();
@@ -40,11 +41,29 @@ export default function AddListItemsPage() {
     navigate(`/list/${list!.id}`);
   };
 
+  const listItemAdded = (name: string) => {
+    const listItem: ListItem = {
+      name,
+      listId: list!.id,
+      checked: false,
+    };
+
+    setListItems([...listItems, listItem]);
+  };
+
   return (
     <main className="">
       <h1>Add list items page</h1>
+      <AddListItemsInput onListItemAdded={listItemAdded} />
+      <ul>
+        {listItems.map((listItem) => (
+          <li>{listItem.name}</li>
+        ))}
+      </ul>
       <Button onClick={cancel}>Cancel</Button>
-      <Button onClick={submit}>Submit</Button>
+      <Button type="submit" onClick={submit}>
+        Submit
+      </Button>
     </main>
   );
 }

@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { listItemsSelector, listSelector, useListsStore } from "@/lib/store";
+import LinkButton from "@/components/LinkButton";
 
 export default function ListPage() {
   const { id } = useParams();
@@ -18,6 +19,9 @@ export default function ListPage() {
           <li>{item.name}</li>
         ))}
       </ul>
+      <LinkButton to="/">Back</LinkButton>
+      <LinkButton to="editItems">Edit Items</LinkButton>
+      <LinkButton to="addItems">Add items</LinkButton>
     </main>
   );
 }
