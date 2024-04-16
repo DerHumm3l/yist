@@ -23,6 +23,7 @@
     "@capacitor/core": "latest",
     "@capacitor/preferences": "^5.0.7",
     "@capacitor/splash-screen": "latest",
+    "@radix-ui/react-checkbox": "^1.0.4",
     "@radix-ui/react-slot": "^1.0.2",
     "@types/node": "^20.12.2",
     "@uidotdev/usehooks": "^2.4.1",
