@@ -14,6 +14,7 @@ type ListsSlice = {
 type ListItemsSlice = {
   listItems: ListItem[];
   addListItems: (...listItems: ListItem[]) => void;
+  updateListItem: (listItem: ListItem) => void;
 };
 
 type ListsStore = ListsSlice & ListItemsSlice;
@@ -39,6 +40,12 @@ const createListItemsSlice: StateCreator<ListsStore, [], [], ListItemsSlice> = (
   listItems: [],
   addListItems: (...listItems) =>
     set((state) => ({ listItems: [...state.listItems, ...listItems] })),
+  updateListItem: (updatedListItem) =>
+    set((state) => ({
+      listItems: state.listItems.map((listItem) =>
+        listItem.id !== updatedListItem.id ? listItem : updatedListItem
+      ),
+    })),
 });
 
 export const useListsStore = create<ListsStore>()(
@@ -64,5 +71,7 @@ export const listSelector =
   });
 
 export const listItemsSelector =
-  (listId: string | undefined) => (state: ListsStore) =>
-    state.listItems.filter((x) => x.listId === listId);
+  (listId: string | undefined) => (state: ListsStore) => ({
+    listItems: state.listItems.filter((x) => x.listId === listId),
+    updateListItem: state.updateListItem,
+  });

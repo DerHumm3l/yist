@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { listSelector, useListsStore } from "@/lib/store";
-import { createList } from "@/lib/utils";
+import { createList, createListItem } from "@/lib/utils";
 import { ListItem } from "@/types/listItem";
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
@@ -23,7 +23,7 @@ export default function AddListItemsPage() {
     updateList,
   } = useListsStore(listSelector(id));
 
-  const [list, setList] = useDefault(listInStore, createList(id));
+  const [list] = useDefault(listInStore, createList(id));
   const [listItems, setListItems] = React.useState([] as ListItem[]);
 
   const cancel = () => {
@@ -42,12 +42,7 @@ export default function AddListItemsPage() {
   };
 
   const listItemAdded = (name: string) => {
-    const listItem: ListItem = {
-      name,
-      listId: list!.id,
-      checked: false,
-    };
-
+    const listItem = createListItem(list!, name);
     setListItems([...listItems, listItem]);
   };
 
@@ -57,7 +52,7 @@ export default function AddListItemsPage() {
       <AddListItemsInput onListItemAdded={listItemAdded} />
       <ul>
         {listItems.map((listItem) => (
-          <li>{listItem.name}</li>
+          <li key={listItem.id}>{listItem.name}</li>
         ))}
       </ul>
       <Button onClick={cancel}>Cancel</Button>
