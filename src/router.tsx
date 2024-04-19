@@ -4,6 +4,7 @@ import ListPage from "./pages/ListPage";
 import AddListItemsPage from "./pages/AddListItemsPage";
 import EditListItemsPage from "./pages/EditListItemsPage";
 import { id } from "./lib/id";
+import SettingsPage from "./pages/SettingsPage";
 
 export default createBrowserRouter([
   {
@@ -27,5 +28,9 @@ export default createBrowserRouter([
   {
     path: "list/:id/editItems",
     element: <EditListItemsPage />,
+  },
+  {
+    path: "settings",
+    element: <SettingsPage />,
   },
 ]);
