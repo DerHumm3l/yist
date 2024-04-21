@@ -1,11 +1,15 @@
 import { Button } from "@/components/ui/button";
-import { listSelector, useListsStore } from "@/lib/store";
 import { createList, createListItem } from "@/lib/utils";
 import { ListItem } from "@/types/listItem";
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDefault } from "@uidotdev/usehooks";
 import AddListItemsInput from "@/components/AddListItemsInput";
+import {
+  useListItemsActions,
+  useList,
+  useListsActions,
+} from "@/lib/state/hooks";
 
 export default function AddListItemsPage() {
   const { id } = useParams();
@@ -16,12 +20,9 @@ export default function AddListItemsPage() {
 
   const navigate = useNavigate();
 
-  const {
-    list: listInStore,
-    addList,
-    addListItems,
-    updateList,
-  } = useListsStore(listSelector(id));
+  const listInStore = useList({ id });
+  const { addList, updateList } = useListsActions();
+  const { addListItems } = useListItemsActions();
 
   const [list] = useDefault(listInStore, createList(id));
   const [listItems, setListItems] = React.useState([] as ListItem[]);

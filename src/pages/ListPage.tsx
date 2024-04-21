@@ -1,14 +1,13 @@
 import { useParams } from "react-router-dom";
-import { listItemsSelector, listSelector, useListsStore } from "@/lib/store";
+import { useList, useListItems, useListItemsActions } from "@/lib/state/hooks";
 import LinkButton from "@/components/LinkButton";
 import { Checkbox } from "@/components/ui/checkbox";
 
 export default function ListPage() {
   const { id } = useParams();
-  const { list } = useListsStore(listSelector(id));
-  const { listItems, updateListItem } = useListsStore(
-    listItemsSelector(list?.id)
-  );
+  const list = useList({ id });
+  const listItems = useListItems({ listId: list?.id });
+  const { updateListItem } = useListItemsActions();
 
   if (!list) {
     return <div>ERROR</div>;

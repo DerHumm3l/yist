@@ -1,9 +1,9 @@
 import LinkButton from "@/components/LinkButton";
 import ListsView from "@/components/ListsView";
-import { useListsStore } from "@/lib/store";
+import { useLists } from "@/lib/state/hooks";
 
 export default function HomePage() {
-  const lists = useListsStore((state) => state.lists);
+  const lists = useLists();
 
   return (
     <main className="flex flex-col items-center">

@@ -1,9 +1,9 @@
-import { listItemsSelector, useListsStore } from "@/lib/store";
+import { useListItems } from "@/lib/state/hooks";
 import { useParams } from "react-router-dom";
 
 export default function EditListItemsPage() {
   const { id: listId } = useParams();
-  const { listItems } = useListsStore(listItemsSelector(listId));
+  const listItems = useListItems({ listId });
 
   return (
     <main className="">
