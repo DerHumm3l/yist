@@ -1,5 +1,5 @@
 import { List } from "@/types/list";
-import { create } from "zustand";
+import { createWithReset } from "./reset";
 import { createJSONStorage, persist } from "zustand/middleware";
 import { storage } from "@/lib/storage";
 
@@ -10,7 +10,7 @@ export type ListsStore = {
   deleteList: (list: List) => void;
 };
 
-export const useListsStore = create<ListsStore>()(
+export const useListsStore = createWithReset<ListsStore>()(
   persist(
     (set) => ({
       lists: [],
