@@ -1,12 +1,18 @@
 import { Link, LinkProps } from "react-router-dom";
-import { Button } from "./ui/button";
+import { Button, ButtonProps } from "./ui/button";
 
-export default function LinkButton(
-  props: LinkProps & React.RefAttributes<HTMLAnchorElement>
-) {
+export type LinkButtonProps = LinkProps &
+  React.RefAttributes<HTMLAnchorElement> &
+  Pick<ButtonProps, "variant" | "size">;
+
+export default function LinkButton({
+  variant,
+  size,
+  ...linkProps
+}: LinkButtonProps) {
   return (
-    <Button asChild>
-      <Link {...props} />
+    <Button asChild variant={variant} size={size}>
+      <Link {...linkProps} />
     </Button>
   );
 }
