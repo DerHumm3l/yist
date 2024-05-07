@@ -16,7 +16,7 @@ export function Left(props: React.HTMLAttributes<HTMLDivElement>) {
 }
 
 export function Center(props: React.HTMLAttributes<HTMLDivElement>) {
-  return <div className="col-start-2" {...props}></div>;
+  return <div className="col-start-2 justify-self-center" {...props}></div>;
 }
 
 export function Right(props: React.HTMLAttributes<HTMLDivElement>) {

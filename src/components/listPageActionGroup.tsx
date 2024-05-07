@@ -1,0 +1,15 @@
+import { Edit2, Plus } from "lucide-react";
+import LinkButton from "./LinkButton";
+
+export default function ListPageActionGroup() {
+  return (
+    <div className="flex gap-2 border-2 rounded-md p-2">
+      <LinkButton to="addItems" size={"icon"}>
+        <Plus />
+      </LinkButton>
+      <LinkButton to="editItems" size={"icon"}>
+        <Edit2 />
+      </LinkButton>
+    </div>
+  );
+}
