@@ -8,7 +8,7 @@ export default function HomePage() {
   const lists = useLists();
 
   return (
-    <main className="flex flex-col items-center m-auto max-w-screen-md">
+    <main className="flex flex-col items-center m-auto max-w-screen-md p-4">
       <Header.Root>
         <Header.Right>
           <SettingsButton className="justify-end" />

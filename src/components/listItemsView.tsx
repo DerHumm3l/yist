@@ -10,11 +10,11 @@ export default function ListItemsView({ listItems }: ListItemsViewProps) {
   const { updateListItem } = useListItemsActions();
 
   return (
-    <ul className="flex flex-col items-start gap-2 p-2">
+    <ul className="flex flex-col items-start gap-4 w-full px-4">
       {listItems.map((item) => (
         <li
           key={item.id}
-          className="flex flex-row items-center space-x-2 space-y-0"
+          className="flex flex-row items-center space-x-3 space-y-0"
         >
           <Checkbox
             id={item.id}

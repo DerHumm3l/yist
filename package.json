@@ -14,7 +14,9 @@
     "build": "vite build",
     "preview": "vite preview",
     "sync": "cap sync",
-    "start-android": "cap run android",
+    "android:start": "cap run android",
+    "android:build": "cap build android",
+    "android:open": "cap open android",
     "lint": "eslint"
   },
   "dependencies": {

@@ -3,7 +3,7 @@ import LinkButton from "./LinkButton";
 
 export default function ListPageActionGroup() {
   return (
-    <div className="flex gap-2 border-2 rounded-md p-2">
+    <div className="flex gap-2 border-2 rounded-md p-2 bottom-4 fixed">
       <LinkButton to="addItems" size={"icon"}>
         <Plus />
       </LinkButton>

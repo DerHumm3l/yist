@@ -15,7 +15,7 @@ export default function ListPage() {
   }
 
   return (
-    <main className="flex flex-col items-center m-auto max-w-screen-md h-screen">
+    <main className="flex flex-col items-center m-auto max-w-screen-md h-screen p-4 space-y-8">
       <Header.Root>
         <Header.Left>
           <BackButton to="/" />

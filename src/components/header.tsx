@@ -3,7 +3,7 @@ export type HeaderProps = React.HTMLAttributes<HTMLDivElement>;
 export function Root({ children, ...props }: HeaderProps) {
   return (
     <nav
-      className="p-4 w-full grid grid-cols-3 grid-rows-1 items-center justify-center content-center align-middle"
+      className="w-full grid grid-cols-3 grid-rows-1 items-center justify-center content-center align-middle"
       {...props}
     >
       {children}
