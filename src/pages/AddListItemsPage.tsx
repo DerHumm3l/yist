@@ -39,7 +39,7 @@ export default function AddListItemsPage() {
     }
 
     addListItems(...listItems);
-    navigate(`/list/${list!.id}`);
+    navigate(`/list/${list!.id}`, { replace: true });
   };
 
   const listItemAdded = (name: string) => {
