@@ -14,7 +14,7 @@ export default function ListItemsView({ listItems }: ListItemsViewProps) {
       {listItems.map((item) => (
         <li
           key={item.id}
-          className="flex flex-row items-center space-x-3 space-y-0"
+          className="flex flex-row items-center space-x-5 space-y-0"
         >
           <Checkbox
             id={item.id}

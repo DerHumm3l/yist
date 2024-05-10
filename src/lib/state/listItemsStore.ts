@@ -7,6 +7,7 @@ export type ListItemsStore = {
   listItems: ListItem[];
   addListItems: (...listItems: ListItem[]) => void;
   updateListItem: (listItem: ListItem) => void;
+  deleteListItems: (...listItems: ListItem[]) => void;
 };
 
 export const useListItemsStore = createWithReset<ListItemsStore>()(
@@ -19,6 +20,13 @@ export const useListItemsStore = createWithReset<ListItemsStore>()(
         set((state) => ({
           listItems: state.listItems.map((listItem) =>
             listItem.id !== updatedListItem.id ? listItem : updatedListItem
+          ),
+        })),
+      deleteListItems: (...listItems) =>
+        set((state) => ({
+          listItems: state.listItems.filter(
+            (listItem) =>
+              listItems.findIndex((x) => x.id === listItem.id) === -1
           ),
         })),
     }),
@@ -36,4 +44,5 @@ export const listItemsSelector =
 export const listItemsActionsSelector = () => (state: ListItemsStore) => ({
   updateListItem: state.updateListItem,
   addListItems: state.addListItems,
+  deleteListItems: state.deleteListItems,
 });
