@@ -1,17 +1,20 @@
 import LinkButton from "@/components/LinkButton";
-import { Button } from "@/components/ui/button";
-import { resetStores } from "@/lib/state/reset";
+import * as Header from "@/components/header";
+import { ChevronLeft } from "lucide-react";
+import SettingsList from "@/components/settingsList";
 
 export default function SettingsPage() {
-  const clear = () => {
-    resetStores();
-  };
-
   return (
-    <main>
-      <h1>Settings page</h1>
-      <LinkButton to="/">Back</LinkButton>
-      <Button onClick={clear}>Clear</Button>
+    <main className="flex flex-col items-center m-auto max-w-screen-md h-screen p-4 space-y-8">
+      <Header.Root>
+        <Header.Left>
+          <LinkButton to="/" size={"icon"} variant={"outline"}>
+            <ChevronLeft />
+          </LinkButton>
+        </Header.Left>
+        <Header.Center>Settings</Header.Center>
+      </Header.Root>
+      <SettingsList />
     </main>
   );
 }
