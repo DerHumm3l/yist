@@ -10,9 +10,8 @@ import {
   useListsActions,
 } from "@/lib/state/hooks";
 import * as Header from "@/components/header";
-import BackButton from "@/components/backButton";
 import { Button } from "@/components/ui/button";
-import { Check } from "lucide-react";
+import { Check, ChevronLeft } from "lucide-react";
 
 export default function AddListItemsPage() {
   const { id } = useParams();
@@ -50,7 +49,13 @@ export default function AddListItemsPage() {
     <main className="flex flex-col items-center m-auto max-w-screen-md h-screen p-4 space-y-8">
       <Header.Root>
         <Header.Left>
-          <BackButton to=".." relative="path" />
+          <Button
+            size={"icon"}
+            variant={"outline"}
+            onClick={() => navigate(-1)}
+          >
+            <ChevronLeft />
+          </Button>
         </Header.Left>
         <Header.Center>{list?.name}</Header.Center>
         <Header.Right>
