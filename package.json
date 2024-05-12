@@ -17,7 +17,7 @@
     "android:start": "cap run android",
     "android:build": "cap build android",
     "android:open": "cap open android",
-    "lint": "eslint"
+    "lint": "oxlint"
   },
   "dependencies": {
     "@capacitor/android": "^5.7.4",
@@ -48,14 +48,18 @@
     "@types/react-dom": "^18.2.23",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.19",
-    "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.1",
     "globals": "^15.0.0",
+    "oxlint": "^0.3.2",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.4.3",
     "typescript-eslint": "^7.5.0",
-    "vite": "^5.2.7"
+    "vite": "^5.2.7",
+    "vite-plugin-oxlint": "^1.0.2"
+  },
+  "overrides": {
+    "oxlint": "^0.3.2"
   },
   "author": "Lukas Maibaum",
   "license": "MIT"
