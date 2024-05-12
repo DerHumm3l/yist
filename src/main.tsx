@@ -4,6 +4,7 @@ import "./index.css";
 import { RouterProvider } from "react-router-dom";
 import router from "./router";
 import { App } from "@capacitor/app";
+import { Toaster } from "./components/ui/toaster";
 
 async function addBackButtonListener() {
   return App.addListener("backButton", (e) => {
@@ -31,6 +32,7 @@ function Yist() {
   return (
     <React.StrictMode>
       <RouterProvider router={router} />
+      <Toaster />
     </React.StrictMode>
   );
 }
