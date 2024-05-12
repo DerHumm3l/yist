@@ -1,10 +1,10 @@
 import { createBrowserRouter, redirect } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import ListPage from "./pages/ListPage";
-import AddListItemsPage from "./pages/AddListItemsPage";
-import EditListItemsPage from "./pages/EditListItemsPage";
+import HomePage from "./pages/homePage";
+import ListPage from "./pages/listPage";
+import AddListItemsPage from "./pages/addListItemsPage";
+import EditListItemsPage from "./pages/editListItemsPage";
 import { id } from "./lib/id";
-import SettingsPage from "./pages/SettingsPage";
+import SettingsPage from "./pages/settingsPage";
 
 export default createBrowserRouter([
   {

@@ -3,7 +3,7 @@ import { ListItem } from "@/types/listItem";
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDefault } from "@uidotdev/usehooks";
-import AddListItemsInput from "@/components/AddListItemsInput";
+import AddListItemsInput from "@/components/addListItemsInput";
 import {
   useListItemsActions,
   useList,

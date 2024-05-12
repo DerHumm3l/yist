@@ -1,5 +1,5 @@
 import { ChevronLeft } from "lucide-react";
-import LinkButton from "./LinkButton";
+import LinkButton from "./linkButton";
 import { LinkProps } from "react-router-dom";
 
 export type BackButtonProps = {

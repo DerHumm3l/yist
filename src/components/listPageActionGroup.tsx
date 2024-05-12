@@ -1,5 +1,5 @@
 import { Edit2, Plus } from "lucide-react";
-import LinkButton from "./LinkButton";
+import LinkButton from "./linkButton";
 
 export default function ListPageActionGroup() {
   return (

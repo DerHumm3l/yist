@@ -1,5 +1,5 @@
 import { Settings } from "lucide-react";
-import LinkButton from "./LinkButton";
+import LinkButton from "./linkButton";
 
 export type SettingsButtonProps = {
   className?: string;

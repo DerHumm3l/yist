@@ -1,5 +1,5 @@
 import { List } from "@/types/list";
-import LinkButton from "./LinkButton";
+import LinkButton from "./linkButton";
 import { ChevronRight } from "lucide-react";
 
 export interface ListCardProps {

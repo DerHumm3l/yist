@@ -1,4 +1,4 @@
-import ListsView from "@/components/ListsView";
+import ListsView from "@/components/listsView";
 import AddListButton from "@/components/addListButton";
 import * as Header from "@/components/header";
 import SettingsButton from "@/components/settingsButton";

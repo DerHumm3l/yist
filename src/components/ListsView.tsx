@@ -1,4 +1,4 @@
-import ListCard from "./ListCard";
+import ListCard from "./listCard";
 import { List } from "@/types/list";
 
 type ListsViewProps = {

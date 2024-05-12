@@ -1,4 +1,4 @@
-import LinkButton from "@/components/LinkButton";
+import LinkButton from "@/components/linkButton";
 import * as Header from "@/components/header";
 import { ChevronLeft } from "lucide-react";
 import SettingsList from "@/components/settingsList";

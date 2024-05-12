@@ -1,4 +1,4 @@
-import LinkButton from "./LinkButton";
+import LinkButton from "./linkButton";
 
 export type AddListButtonProps = {
   className?: string;
