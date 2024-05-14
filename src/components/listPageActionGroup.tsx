@@ -16,7 +16,7 @@ export default function ListPageActionGroup() {
 
       timeout.current = setTimeout(() => {
         setIsVisible(true);
-      }, 500);
+      }, 300);
     };
 
     window.addEventListener("scroll", handleScroll);
