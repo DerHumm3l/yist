@@ -32,7 +32,7 @@ export default function ListPageActionGroup() {
 
   return (
     <div
-      className={`fixed bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2 shadow-lg rounded-md bg-white dark:bg-gray-950 p-2 dark:shadow-gray-800 overscroll-contain transition-opacity duration-300 ${
+      className={`fixed bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 shadow-lg rounded-md bg-white dark:bg-gray-950 p-2 dark:shadow-gray-800 overscroll-contain transition-opacity duration-300 ${
         isVisible ? "opacity-100" : "opacity-0"
       }`}
     >

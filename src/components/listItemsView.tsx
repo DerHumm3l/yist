@@ -10,7 +10,7 @@ export default function ListItemsView({ listItems }: ListItemsViewProps) {
   const { updateListItem } = useListItemsActions();
 
   return (
-    <ul className="flex flex-col items-start gap-6 w-full px-4 pb-6">
+    <ul className="flex flex-col items-start gap-6 w-full px-4 pb-[5rem]">
       {listItems.map((item) => (
         <li
           key={item.id}
