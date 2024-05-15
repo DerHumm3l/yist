@@ -17,7 +17,8 @@
     "android:start": "cap run android",
     "android:build": "cap build android",
     "android:open": "cap open android",
-    "lint": "oxlint"
+    "lint": "oxlint",
+    "test": "playwright test"
   },
   "dependencies": {
     "@capacitor/android": "^5.7.4",
@@ -46,6 +47,7 @@
   "devDependencies": {
     "@capacitor/cli": "latest",
     "@eslint/js": "^9.0.0",
+    "@playwright/test": "^1.44.0",
     "@types/react": "^18.2.73",
     "@types/react-dom": "^18.2.23",
     "@vitejs/plugin-react": "^4.2.1",
@@ -53,6 +55,7 @@
     "eslint-plugin-react": "^7.34.1",
     "globals": "^15.0.0",
     "oxlint": "^0.3.2",
+    "playwright": "^1.44.0",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.4.3",
